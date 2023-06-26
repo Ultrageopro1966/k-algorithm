@@ -1,2 +1,22 @@
 # k-algorithm
-Implementation of the k-algorithm for finding clusters
+**Метод _k_-средних** (k-means) — наиболее популярный метод [кластеризации](https://ru.wikipedia.org/wiki/%D0%9A%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F "Кластеризация"). Был изобретён в 1950-х годах математиком Гуго Штейнгаузоми почти одновременно Стюартом Ллойдом. Особую популярность приобрёл после работы Маккуина.
+
+Действие алгоритма таково, что он стремится минимизировать суммарное квадратичное отклонение точек кластеров от центров этих кластеров.
+> [Википедия](https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_k-%D1%81%D1%80%D0%B5%D0%B4%D0%BD%D0%B8%D1%85) 
+
+**Проблема оптимизации**:
+
+$$
+V = \sum_{i=1}^{k}\sum_{x \in S_{i}}(x-\mu _{i})^{2} \to min
+$$
+
+В данном репозитории вы найдете код на языке _Python_, который демонстрирует работу оптимизационного алгоритма на нормально распределенных кластерах, настраиваемых пользователем. На выходе код сохраняет анимацию нахождения кластеров.
+
+**Примеры работы кода**:
+
+![anim0](https://github.com/Ultrageopro1966/k-algorithm/assets/120571667/12926c88-be68-460b-ad9c-859b1943927b)
+![anim2](https://github.com/Ultrageopro1966/k-algorithm/assets/120571667/a11f61a1-0db5-4898-84cb-46935d9cc332)
+
+**Источники**:
+1. [Википедия](https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_k-%D1%81%D1%80%D0%B5%D0%B4%D0%BD%D0%B8%D1%85) 
+2. [ProgLib](https://proglib.io/p/obyasnite-tak-kak-budto-mne-10-let-prostoe-opisanie-populyarnogo-algoritma-klasterizacii-k-srednih-2022-12-07) 
