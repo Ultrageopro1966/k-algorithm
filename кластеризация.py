@@ -68,8 +68,9 @@ def find_clusters(k_points: np.ndarray) -> tuple[list, np.ndarray, np.ndarray]:
         if len(cluster) == 0:  # Обработка пустого кластера
             new_k_points[k_point_index] = k_points.T[k_point_index]
         else:
-            # Изменение k-точки на новую
-            new_k_points[k_point_index] = cluster.mean(axis=0)
+            new_k_points[k_point_index] = cluster.mean(
+                axis=0
+            )  # Изменение k-точки на новую
 
     return clusters, new_k_points.T, quality
 
