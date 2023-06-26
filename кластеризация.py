@@ -23,6 +23,8 @@ for cluster in range(CLUSTER_NUM):
         cluster_points[cluster * CLUSTER_POWER + point][1] = np.random.normal(
             CLUSTER_ORDINATE[cluster], DISPERSION, (1,)
         )
+del cluster, CLUSTER_ORDINATE
+
 cluster_points = cluster_points.T
 
 # Определение диапазона k-точек
@@ -117,10 +119,13 @@ print()
 fig, ax = plt.subplots(ncols=2, nrows=1)
 y_limits: list = [min(quality_plot_data) - 20, max(quality_plot_data) + 20]
 
+del cluster_points, attempts, quality, clusters, k_points
+del K_RANGE, CLUSTER_NUM, CLUSTER_POWER, DISPERSION
+
 
 # Функция обновления анимации
 def update(frame: int):
-    global ax, ITERATIONS
+    global ax, ITERATIONS, COLORS
     ax[0].cla()
     ax[1].cla()
 
