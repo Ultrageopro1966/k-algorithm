@@ -154,21 +154,6 @@ def update(frame: int):
         )
 
 
-ax[0].plot(quality_plot_data)
-for plot_data, color_ind in list(zip(clusters, range(len(COLORS)))):
-    plot_data: np.ndarray = np.array(plot_data)
-    try:
-        ax[1].scatter(*plot_data.T, c=COLORS[color_ind])
-    except:
-        pass
-
-    ax[1].scatter(
-        *k_points[:, color_ind],
-        s=150,
-        c=COLORS[color_ind],
-        edgecolors="black",
-    )
-
 # Вывод графика/создание и сохранение анмации
 animation = FuncAnimation(fig, update, frames=ITERATIONS, interval=100)
 animation.save("anim2.gif")
